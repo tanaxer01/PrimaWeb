@@ -2,10 +2,12 @@ import PostTable from "./components/postTable";
 import { fetchPost } from "./lib/queries";
 
 export default async function Home() {
-  const res = await fetchPost(1);
-  const { title, photos } = res.data[0].attributes;
+  //const res = await fetchPost(1);
+  //const { title, photos } = res.data[0].attributes;
+  //const photo_url = photos.data[0].attributes.url;
 
-  const photo_url = photos.data[0].attributes.url;
+  const photo_url =
+    "https://primapress.info/cdn/shop/files/Diapositiva1_e9c0172c-40f0-4109-b43d-5f348f5e856b.jpg?v=17068240326";
 
   const fields = {
     id: "001",
@@ -27,7 +29,7 @@ export default async function Home() {
       {Array.from({ length: 3 }).map((_, i) => (
         <div key={i}>
           <div className="w-[80%] max-w-[715px] mx-auto">
-            <img src={`http://localhost:1337${photo_url}`} />
+            <img src={photo_url} />
           </div>
           <PostTable values={fields} />
         </div>
