@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 function TopNav() {
   return (
-    <nav className="flex w-full m-auto items-center justify-between text-xs font-semibold px-5 py-2">
+    <nav className="flex w-full m-auto items-center justify-between text-sm font-semibold px-5 py-2">
       <div className="flex items-start gap-5">
         <Link href="/">primapress</Link>
         <Link href="/about">Info</Link>
