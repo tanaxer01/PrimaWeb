@@ -16,10 +16,11 @@ function TopNav() {
       <div className="flex items-start gap-5">
         <Link href="/">primapress</Link>
         <Link href="/about">Info</Link>
+        <Link href="/catalog">Catálogo</Link>
       </div>
       <div className="flex items-end gap-5">
         <Link href="/">Instagram</Link>
-        <Link href="/catalog">Catálogo</Link>
+        <Link href="/">Carrito(0)</Link>
       </div>
     </nav>
   );

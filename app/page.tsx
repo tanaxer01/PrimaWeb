@@ -25,10 +25,10 @@ export default async function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col py-10">
+    <main className="min-h-screen flex flex-col py-5">
       {Array.from({ length: 3 }).map((_, i) => (
-        <div key={i}>
-          <div className="w-[80%] max-w-[715px] mx-auto">
+        <div key={i} className="flex flex-col gap-5">
+          <div className="w-[60%] max-w-[509px] mx-auto">
             <img src={photo_url} />
           </div>
           <PostTable values={fields} />

@@ -17,42 +17,51 @@ type tableInfo = {
 };
 
 export default function PostTable({ values }: { values: tableInfo }) {
-  const [isHovering, setHovering] = useState<boolean>(false);
   const [isDisplayed, setDisplayed] = useState<boolean>(false);
 
   return (
-    <div
-      className="grid grid-cols-7 w-full p-5"
-      onMouseOver={() => setHovering(true)}
-      onMouseOut={() => setHovering(false)}
-    >
-      {Object.entries(values)
-        .slice(0, 7)
-        .map(([k, v], i) => (
-          <div
-            key={k}
-            className={`border-y border-black text-xs ${k == "name" && isHovering ? "underline font-semibold" : ""}`}
-            onClick={() => setDisplayed(!isDisplayed)}
-          >
-            {v}
-          </div>
-        ))}
+    <div className="group grid grid-cols-7 w-full">
+      <div className={`border-y border-black text-xs pl-2 py-1`}>
+        {values.id}
+      </div>
       <div
-        className="border-b border-black col-span-2"
+        className="border-y border-black text-xs pl-2 py-1 group-hover:underline group-hover:font-semibold"
         onClick={() => setDisplayed(!isDisplayed)}
-      ></div>
-      {Object.entries(values)
-        .slice(7, 11)
-        .map(([k, v]) => (
-          <div
-            key={k}
-            className="border-b border-black text-xs"
-            onClick={() => setDisplayed(!isDisplayed)}
-          >
-            {v}
-          </div>
-        ))}
-      <div className="border-b border-black text-xs font-semibold">COMPRAR</div>
+      >
+        {values.name}
+      </div>
+      <div className="border-y border-black text-xs pl-2 py-1">
+        {values.author}
+      </div>
+      <div className="border-y border-black text-xs pl-2 py-1">
+        {values.year}
+      </div>
+      <div className="border-y border-black text-xs pl-2 py-1">
+        {values.lang}
+      </div>
+      <div className="border-y border-black text-xs pl-2 py-1">
+        {values.editorial}
+      </div>
+      <div className="border-y border-black text-xs pl-2 py-1">
+        {values.price}
+      </div>
+
+      <div className="border-b border-black py-1 col-span-2"></div>
+      <div className="border-b border-black text-xs pl-2 py-1">
+        {values.isdn}
+      </div>
+      <div className="border-b border-black text-xs pl-2 py-1">
+        {values.pages}
+      </div>
+      <div className="border-b border-black text-xs pl-2 py-1">
+        {values.shape}
+      </div>
+      <div className="border-b border-black text-xs pl-2 py-1">
+        {values.cover}
+      </div>
+      <div className="border-b border-black text-xs pl-2 py-1 font-semibold">
+        COMPRAR
+      </div>
 
       <div
         className={`border-b border-black col-span-2 ${isDisplayed ? "" : "collapse"}`}
@@ -60,7 +69,7 @@ export default function PostTable({ values }: { values: tableInfo }) {
       <div
         className={`border-b border-black text-xs col-span-4 ${isDisplayed ? "" : "collapse"}`}
       >
-        {values.info[0]}
+        {"aaa"}
       </div>
 
       <div
